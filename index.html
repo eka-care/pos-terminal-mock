@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>POS Terminal Mock - a stand-in card machine for Pine Labs integrations</title>
+    <meta
+      name="description"
+      content="A local stand-in for an Indian POS card machine. Build and test a Pine Labs Plutus Cloud integration - declines, timeouts, stuck payments, expiry - without the hardware. One file, no dependencies, MIT."
+    />
+    <link rel="canonical" href="https://eka-care.github.io/pos-terminal-mock/" />
+    <meta name="author" content="Eka Care" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="POS terminal mock, Pine Labs, Plutus Smart, Plutus Cloud API, card machine simulator, EDC, payments testing, India, UploadBilledTransaction, GetCloudBasedTxnStatus"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="POS Terminal Mock" />
+    <meta property="og:url" content="https://eka-care.github.io/pos-terminal-mock/" />
+    <meta property="og:title" content="POS Terminal Mock - a stand-in card machine" />
+    <meta
+      property="og:description"
+      content="Build a Pine Labs terminal integration without the terminal. Produce a decline, a timeout or a customer who walks off mid-payment on demand."
+    />
+    <meta property="og:image" content="https://eka-care.github.io/pos-terminal-mock/docs/img/social-card.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="POS Terminal Mock - a stand-in card machine, so you can build a POS integration without the hardware" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="POS Terminal Mock - a stand-in card machine" />
+    <meta
+      name="twitter:description"
+      content="Build a Pine Labs terminal integration without the terminal. Produce a decline, a timeout or a customer who walks off mid-payment on demand."
+    />
+    <meta name="twitter:image" content="https://eka-care.github.io/pos-terminal-mock/docs/img/social-card.png" />
+    <meta name="theme-color" content="#215fff" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "POS Terminal Mock",
+        "description": "A local stand-in for an Indian POS card machine. Answers Pine Labs' Plutus Cloud API the way a real terminal answered it, so a payment integration can be built and tested - including declines, timeouts and stuck payments - without the hardware.",
+        "url": "https://eka-care.github.io/pos-terminal-mock/",
+        "codeRepository": "https://github.com/eka-care/pos-terminal-mock",
+        "programmingLanguage": "JavaScript",
+        "runtimePlatform": "Node.js",
+        "license": "https://spdx.org/licenses/MIT.html",
+        "author": { "@type": "Organization", "name": "Eka Care", "url": "https://www.eka.care" },
+        "keywords": "POS, payments, India, Pine Labs, Plutus, mock, testing, card machine"
+      }
+    </script>
+
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff; --wash: #f6f8fa; --ink: #1f2328; --muted: #656d76;
+        --line: #d0d7de; --accent: #215fff; --code: #f6f8fa;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0d1117; --wash: #161b22; --ink: #e6edf3; --muted: #8b949e;
+          --line: #30363d; --accent: #5b8cff; --code: #161b22;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: var(--bg); color: var(--ink);
+        font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      }
+      .wrap { max-width: 56rem; margin: 0 auto; padding: 3rem 1rem 5rem; }
+      h1 { font-size: 2.4rem; line-height: 1.15; margin: 2rem 0 0.5rem; letter-spacing: -0.02em; }
+      h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
+      .lede { font-size: 1.15rem; color: var(--ink); margin: 0 0 1.25rem; }
+      p { color: var(--muted); }
+      img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+      pre {
+        background: var(--code); border: 1px solid var(--line); border-radius: 8px;
+        padding: 0.9rem 1rem; overflow-x: auto;
+      }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+      pre code { color: var(--accent); }
+      a { color: var(--accent); }
+      ul { color: var(--muted); padding-left: 1.2rem; }
+      li { margin: 0.4rem 0; }
+      li strong { color: var(--ink); }
+      .cta {
+        display: inline-block; margin-top: 1rem; padding: 0.6rem 1.1rem; border-radius: 8px;
+        background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+      }
+      footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/img/social-card-dark.png" />
+        <img
+          src="docs/img/social-card.png"
+          alt="POS Terminal Mock - a stand-in card machine, so you can build a POS integration without the hardware"
+          width="1280"
+          height="640"
+        />
+      </picture>
+
+      <h1>POS Terminal Mock</h1>
+      <p class="lede">A stand-in card machine, for developers who do not have one.</p>
+
+      <p>
+        Integrating an Indian POS terminal means writing code against hardware you probably cannot keep
+        on your desk, and against API docs that do not always match what the device does. This is a
+        local server that answers the terminal's cloud API the way the real one answered it, so you can
+        build the whole flow before you ever hold a machine.
+      </p>
+
+      <pre><code>npx github:eka-care/pos-terminal-mock</code></pre>
+
+      <p>
+        Point your integration's provider host at <code>http://localhost:8201</code> - that is the only
+        change. Then open that page and you are the customer at the counter.
+      </p>
+
+      <a class="cta" href="https://github.com/eka-care/pos-terminal-mock">View on GitHub</a>
+
+      <h2>Why it exists</h2>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/img/overview-dark.png" />
+        <img
+          src="docs/img/overview-light.png"
+          alt="Your app pushes an amount and gets a reference back; the mock is the machine, where you choose how the sale ends; then you ask how it ended and must handle every answer"
+        />
+      </picture>
+      <ul>
+        <li>
+          <strong>The sale resolves later, and maybe elsewhere.</strong> The machine does not call you
+          back. You learn what happened by asking, and the thing you must handle is a sale whose asker
+          went away.
+        </li>
+        <li>
+          <strong>The failures are the interesting part.</strong> A declined card, a customer who walks
+          off mid-payment, a sale nobody completes, a cancel that arrives too late. You cannot produce
+          those on demand with real hardware, and you certainly cannot produce them in CI.
+        </li>
+        <li>
+          <strong>The docs and the device disagree.</strong> Several behaviours were found with a
+          physical terminal on a UAT account, and they are the ones that break integrations.
+        </li>
+      </ul>
+
+      <h2>The behaviours that bite</h2>
+      <ul>
+        <li><strong>Every reply is HTTP 200.</strong> The outcome lives in <code>ResponseCode</code>.</li>
+        <li>
+          <strong>A non-numeric <code>SequenceNumber</code> is rejected with HTTP 400</strong>, before
+          any credential check.
+        </li>
+        <li>
+          <strong><code>AllowedPaymentMode</code> is pipe-separated</strong> (<code>1|10</code>); a
+          comma list is refused.
+        </li>
+        <li>
+          <strong>Re-uploading the same <code>TransactionNumber</code> replaces the live sale</strong>
+          with a new reference, so a blind retry orphans the sale you were tracking.
+        </li>
+        <li>
+          <strong>A pending sale reads as failed</strong> on more than one adapter, which false-declines
+          a card that is about to go through.
+        </li>
+      </ul>
+      <p>
+        The full contract, and which behaviours were observed on a device as against assumed, is in
+        <a href="https://github.com/eka-care/pos-terminal-mock/blob/main/docs/pine-labs.md">docs/pine-labs.md</a>.
+      </p>
+
+      <h2>Providers</h2>
+      <ul>
+        <li><strong>Pine Labs</strong> (Plutus Smart, Cloud API) - implemented</li>
+        <li><strong>Razorpay POS</strong> - coming soon</li>
+        <li><strong>Paytm EDC</strong> - coming soon</li>
+      </ul>
+
+      <footer>
+        MIT. Built at <a href="https://www.eka.care">Eka Care</a> and open-sourced because every team
+        integrating these terminals is solving the same problem.
+        <a href="https://github.com/eka-care/open-source">More Eka Care open source</a>.
+      </footer>
+    </main>
+  </body>
+</html>

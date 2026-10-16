@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="356" viewBox="0 0 1240 356" role="img" aria-label="Your app pushes an amount, the mock lets you choose how the sale ends - tap a card, decline, get stuck mid-payment, let it expire - and your integration must handle every answer the status call returns">
+  <rect width="1240" height="356" fill="none"/>
+  <text x="48" y="28" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#1f2328">Push a sale, choose how it ends, and make your code handle every answer.</text>
+
+  <text x="48" y="58" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#656d76" letter-spacing="0.6">1 - YOUR APP PUSHES AN AMOUNT</text>
+  <rect x="48" y="76" width="272" height="230" rx="6" fill="#f6f8fa" stroke="#c3cbd4" stroke-width="1.25"/>
+  <text x="66" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">POST</text>
+  <text x="104" y="104" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#215fff">UploadBilledTransaction</text>
+  <text x="66" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">Amount</text><text x="186" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#1f2328">"50000"</text><text x="240" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="400" fill="#8c959f">// paise</text>
+  <text x="66" y="158" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">AllowedPaymentMode</text><text x="186" y="158" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#1f2328">"1|10"</text><text x="240" y="158" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="400" fill="#8c959f">// pipes</text>
+  <text x="66" y="180" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">SequenceNumber</text><text x="186" y="180" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#1f2328">1001</text><text x="240" y="180" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="400" fill="#8c959f">// numeric</text>
+  <text x="66" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">AutoCancelDuration</text><text x="186" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#1f2328">2</text><text x="240" y="202" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" font-weight="400" fill="#8c959f">// minutes</text>
+  <rect x="66" y="240" width="236" height="1" fill="#c3cbd4"/>
+  <text x="66" y="262" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="400" fill="#656d76">→ reference</text>
+  <text x="186" y="262" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#215fff">877081</text>
+  <text x="66" y="284" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">the sale’s identity from here on,</text>
+  <text x="66" y="297" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">not the number you sent</text>
+  <text x="48" y="332" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#656d76">No terminal. No account. No callback URL.</text>
+
+  
+  <path d="M332 191 L364 191" stroke="#656d76" stroke-width="1.5"/>
+  <path d="M358 186 L364 191 L358 196" fill="none" stroke="#656d76" stroke-width="1.5"/>
+
+  <text x="376" y="58" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#656d76" letter-spacing="0.6">2 - THIS IS THE MACHINE</text>
+  
+  <g>
+    <rect x="378" y="79" width="440" height="230" rx="7" fill="#8c959f" opacity="0.16"/>
+    <rect x="376" y="76" width="440" height="230" rx="7" fill="#ffffff" stroke="#8c959f" stroke-width="1.25"/>
+    <path d="M376 104 h440" stroke="#c3cbd4" stroke-width="1"/>
+    <circle cx="393" cy="90.5" r="3.6" fill="#c3cbd4"/>
+    <circle cx="405" cy="90.5" r="3.6" fill="#c3cbd4"/>
+    <circle cx="417" cy="90.5" r="3.6" fill="#c3cbd4"/>
+    <rect x="434" y="83" width="364" height="15" rx="7.5" fill="#f6f8fa"/>
+    <text x="444" y="93.5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#656d76">localhost:8201</text>
+    <text x="398" y="128" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#1f2328">Pine Labs terminal (mock)</text>
+    <text x="398" y="147" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#656d76">Push a sale from your app, then act as the customer here.</text>
+    
+    <rect x="388" y="158" width="416" height="1" fill="#dde3ea"/>
+    <text x="398" y="178" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f2328">₹500.00</text>
+    <text x="480" y="178" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#656d76">Card · UPI</text>
+    <text x="792" y="178" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="600" fill="#9a6700" text-anchor="end">pending</text>
+    <rect x="398" y="188" width="58.4" height="20" rx="4" fill="#1a7f37" fill-opacity="0.13" stroke="#1a7f37" stroke-width="1"/>
+    <text x="427.2" y="201.6" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#1a7f37" text-anchor="middle">Tap card</text>
+    <rect x="462.4" y="188" width="69" height="20" rx="4" fill="#1a7f37" fill-opacity="0.13" stroke="#1a7f37" stroke-width="1"/>
+    <text x="496.9" y="201.6" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#1a7f37" text-anchor="middle">Pay by UPI</text>
+    <rect x="537.4" y="188" width="53.1" height="20" rx="4" fill="#cf222e" fill-opacity="0.13" stroke="#cf222e" stroke-width="1"/>
+    <text x="563.9499999999999" y="201.6" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#cf222e" text-anchor="middle">Decline</text>
+    <rect x="596.5" y="188" width="106.1" height="20" rx="4" fill="#9a6700" fill-opacity="0.13" stroke="#9a6700" stroke-width="1"/>
+    <text x="649.55" y="201.6" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#9a6700" text-anchor="middle">Stuck mid-payment</text>
+    <rect x="708.6" y="188" width="84.89999999999999" height="20" rx="4" fill="#f6f8fa" fill-opacity="1" stroke="#c3cbd4" stroke-width="1"/>
+    <text x="751.0500000000001" y="201.6" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#1f2328" text-anchor="middle">Let it expire</text>
+    
+    <rect x="388" y="218" width="416" height="1" fill="#dde3ea"/>
+    <text x="398" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#656d76">₹1,200.00</text>
+    <text x="480" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#656d76">All modes</text>
+    <text x="792" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="600" fill="#1a7f37" text-anchor="end">approved · CARD</text>
+    <text x="398" y="258" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#656d76">ref 877080  ·  machine 3923</text>
+    <rect x="388" y="272" width="416" height="1" fill="#dde3ea"/>
+    <text x="398" y="290" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">The machine offers only the modes your app allowed for that sale.</text>
+  </g>
+  <text x="376" y="332" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#656d76">You are the customer at the counter - including the endings hardware will not give you on demand.</text>
+
+  
+  <path d="M828 191 L860 191" stroke="#656d76" stroke-width="1.5"/>
+  <path d="M854 186 L860 191 L854 196" fill="none" stroke="#656d76" stroke-width="1.5"/>
+
+  <text x="872" y="58" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#656d76" letter-spacing="0.6">3 - YOU ASK HOW IT ENDED</text>
+  
+    <rect x="872" y="76" width="320" height="38" rx="5" fill="#ffffff" stroke="#c3cbd4" stroke-width="1"/>
+    <rect x="872" y="76" width="3.5" height="38" rx="1.75" fill="#1a7f37"/>
+    <text x="886" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#1a7f37">0</text>
+    <text x="916" y="91" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#1f2328">TXN APPROVED</text>
+    <text x="916" y="106" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">the card was taken</text>
+    <rect x="872" y="122" width="320" height="38" rx="5" fill="#ffffff" stroke="#c3cbd4" stroke-width="1"/>
+    <rect x="872" y="122" width="3.5" height="38" rx="1.75" fill="#cf222e"/>
+    <text x="886" y="137" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#cf222e">2</text>
+    <text x="916" y="137" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#1f2328">TXN DECLINED BY ISSUER</text>
+    <text x="916" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">the card was refused</text>
+    <rect x="872" y="168" width="320" height="38" rx="5" fill="#ffffff" stroke="#c3cbd4" stroke-width="1"/>
+    <rect x="872" y="168" width="3.5" height="38" rx="1.75" fill="#9a6700"/>
+    <text x="886" y="183" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#9a6700">1001</text>
+    <text x="916" y="183" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#1f2328">TXN UPLOADED</text>
+    <text x="916" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">still waiting - not a failure</text>
+    <rect x="872" y="214" width="320" height="38" rx="5" fill="#ffffff" stroke="#c3cbd4" stroke-width="1"/>
+    <rect x="872" y="214" width="3.5" height="38" rx="1.75" fill="#656d76"/>
+    <text x="886" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#656d76">1</text>
+    <text x="916" y="229" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#1f2328">INVALID TRANSACTION NUMBER</text>
+    <text x="916" y="244" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">nobody paid, it expired</text>
+    <rect x="872" y="260" width="320" height="38" rx="5" fill="#ffffff" stroke="#c3cbd4" stroke-width="1"/>
+    <rect x="872" y="260" width="3.5" height="38" rx="1.75" fill="#9a6700"/>
+    <text x="886" y="275" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="700" fill="#9a6700">1</text>
+    <text x="916" y="275" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="400" fill="#1f2328">CANNOT CANCEL ... IN PROGRESS</text>
+    <text x="916" y="290" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#656d76">mid-payment: do not double-collect</text>
+  <text x="872" y="332" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#656d76">GetCloudBasedTxnStatus - branch on the code, never the HTTP status.</text>
+</svg>

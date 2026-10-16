@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="docs/pine-labs.md">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/img/social-card-dark.png">
+      <img alt="POS Terminal Mock - a stand-in card machine, so you can build a POS integration without the hardware" src="docs/img/social-card.png" width="100%">
+    </picture>
+  </a>
+</p>
+
 # pos-terminal-mock
 
 **A stand-in card machine, for developers who do not have one.**
@@ -17,7 +26,14 @@ Then open <http://localhost:8201/> and you are the customer at the counter: ever
 buttons to **tap a card**, **pay by UPI**, **decline**, **get stuck mid-payment** (which is when a
 cancel must be refused) and **let it expire**.
 
-No dependencies. One file. Node 20+.
+No runtime dependencies. One file. Node 20+.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/img/overview-dark.png">
+    <img alt="Your app pushes an amount and gets a reference back; the mock is the machine, where you choose how the sale ends - tap a card, pay by UPI, decline, get stuck mid-payment, let it expire; then you ask how it ended and must handle every answer, because every reply is HTTP 200" src="docs/img/overview-light.png" width="100%">
+  </picture>
+</p>
 
 ## Why this exists
 

@@ -3,17 +3,47 @@
   "version": "0.1.0",
   "description": "A stand-in card machine for developers integrating Indian POS terminals - Pine Labs today, Razorpay and Paytm next.",
   "type": "module",
-  "bin": { "pos-terminal-mock": "./server.mjs" },
+  "bin": {
+    "pos-terminal-mock": "./server.mjs"
+  },
   "main": "./server.mjs",
-  "files": ["server.mjs", "docs", "README.md", "LICENSE"],
-  "scripts": { "start": "node server.mjs" },
-  "engines": { "node": ">=20" },
+  "files": [
+    "server.mjs",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.mjs",
+    "gen:diagrams": "node scripts/gen-diagrams.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "keywords": [
-    "pos", "terminal", "mock", "pine-labs", "plutus", "razorpay", "paytm",
-    "payments", "india", "card-machine", "edc", "testing"
+    "pos",
+    "terminal",
+    "mock",
+    "pine-labs",
+    "plutus",
+    "razorpay",
+    "paytm",
+    "payments",
+    "india",
+    "card-machine",
+    "edc",
+    "testing"
   ],
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/eka-care/pos-terminal-mock.git" },
-  "bugs": { "url": "https://github.com/eka-care/pos-terminal-mock/issues" },
-  "homepage": "https://github.com/eka-care/pos-terminal-mock#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eka-care/pos-terminal-mock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eka-care/pos-terminal-mock/issues"
+  },
+  "homepage": "https://github.com/eka-care/pos-terminal-mock#readme",
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
 }
