@@ -1,0 +1,5 @@
+# The landing page and the generator are documentation, not the thing you install.
+# Without this the language bar reads 23% HTML, which misdescribes a one-file Node server.
+index.html          linguist-documentation
+docs/**             linguist-documentation
+scripts/**          linguist-documentation
