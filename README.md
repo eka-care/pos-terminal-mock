@@ -8,8 +8,8 @@ server that answers the terminal's cloud API the way the real one answered it, s
 whole flow before you ever hold a machine.
 
 ```sh
-npx @eka-care/pos-terminal-mock       # or: node server.mjs
-# listening on http://localhost:8201
+npx github:eka-care/pos-terminal-mock       # or clone, then: node server.mjs
+# ▸ mock Pine Labs terminal on http://localhost:8201
 ```
 
 Point your integration's provider host at `http://localhost:8201` — **that is the only change.**
